@@ -2,6 +2,8 @@
 , withALSA ? true, alsaLib ? null
 , withPulseAudio ? false, libpulseaudio ? null
 , withPortAudio ? false, portaudio ? null
+, withDbusKeyring ? false
+, withDbusMpris ? false
 }:
 
 rustPlatform.buildRustPackage rec {
@@ -20,7 +22,7 @@ rustPlatform.buildRustPackage rec {
   cargoBuildFlags = [
     "--no-default-features"
     "--features"
-    "${stdenv.lib.optionalString withALSA "alsa_backend,"}${stdenv.lib.optionalString withPulseAudio "pulseaudio_backend,"}${stdenv.lib.optionalString withPortAudio "portaudio_backend,"}"
+    "${stdenv.lib.optionalString withALSA "alsa_backend,"}${stdenv.lib.optionalString withPulseAudio "pulseaudio_backend,"}${stdenv.lib.optionalString withPortAudio "portaudio_backend,"}${stdenv.lib.optionalString withDbusKeyring "dbus_keyring,"}${stdenv.lib.optionalString withDbusMpris "dbus_mpris,"}"
   ];
 
   nativeBuildInputs = [ pkgconfig ];
