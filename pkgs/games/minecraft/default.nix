@@ -121,6 +121,7 @@ stdenv.mkDerivation rec {
   '';
 
   preFixup = ''
+    ls $out/opt/minecraft-launcher
     patchelf \
       --set-interpreter ${stdenv.cc.bintools.dynamicLinker} \
       --set-rpath '$ORIGIN/'":${libPath}" \
