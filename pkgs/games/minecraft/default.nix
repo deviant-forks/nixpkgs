@@ -91,8 +91,8 @@ stdenv.mkDerivation rec {
   version = "1.0.1221";
 
   src = fetchurl {
-    url = "https://launcher.mojang.com/download/linux/x86_64/minecraft-launcher_${version}.tar.gz";
-    sha256 = "cd9f0b44fc9cec42829cb2e71145ee599f3d34c7715b55963514d0a8d36214ab";
+    url = "https://s3.amazonaws.com/public-storage.unshard.com/minecraft-launcher_2.3.280.tar.gz";
+    sha256 = "fc38d6625f615748bbc9bc9fb2cb42fa8d59abd0df1e9636006fa9e8641a71d1";
   };
 
   icon = fetchurl {
