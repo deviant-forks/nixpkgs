@@ -88,7 +88,7 @@ in
 stdenv.mkDerivation rec {
   pname = "minecraft-launcher";
 
-  version = "1.0.1221";
+  version = "2.3.280";
 
   src = fetchurl {
     url = "https://s3.amazonaws.com/public-storage.unshard.com/minecraft-launcher_2.3.280.tar.gz";
